@@ -2,34 +2,7 @@ package com.howtodoinjava.example.employee.beans;
 
 public class Employee {
 
-	private String name;
-	private int id;
-	
-	public Employee(int id, String name) {
-		super();
-		this.id=id;
-		this.name=name;
-	}
-	
-	public String getName() {
-		return name;
-	}
+    // TODO create an employee with name and id
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [name=" + name + ", id=" + id + "]";
-	}
 
 }

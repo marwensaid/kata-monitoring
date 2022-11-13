@@ -1,6 +1,6 @@
 server:
   port: 8010    #port number
- 
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 5
@@ -12,15 +12,15 @@ eureka:
       enabled: true
     lease:
       duration: 5
- 
-spring:    
+
+spring:
   application:
-    name: api-gateway   
-     
+    name: api-gateway
+
 management:
   security:
-    enabled: false  
- 
+    enabled: false
+
 logging:
   level:
     com.self.sprintboot.learning.apigateway: DEBUG

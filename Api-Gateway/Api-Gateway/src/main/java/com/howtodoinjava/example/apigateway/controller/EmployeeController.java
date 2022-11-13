@@ -11,30 +11,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
 @RestController
 public class EmployeeController {
-	
-	@Autowired
+
+    @Autowired
     RestTemplate restTemplate;
- 
+
     @RequestMapping(value = "/employeeDetails/{employeeid}", method = RequestMethod.GET)
     // what hystrix annotation to expose fallback ?
-    public String getStudents(@PathVariable int employeeid)
-    {
+    public String getStudents(@PathVariable int employeeid) {
         System.out.println("Getting Employee details for " + employeeid);
- 
-        String response = restTemplate.exchange("http://employee-service/findEmployeeDetails/{employeeid}",
-                                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, employeeid).getBody();
- 
-        System.out.println("Response Body " + response);
- 
-        return "Employee Id -  " + employeeid + " [ Employee Details " + response+" ]";
-    }
-    
 
-    // expose fallback method (free impl)
+        String response = this.restTemplate.exchange("http://employee-service/findEmployeeDetails/{employeeid}",
+                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
+                }, employeeid).getBody();
+
+        System.out.println("Response Body " + response);
+
+        return "Employee Id -  " + employeeid + " [ Employee Details " + response + " ]";
+    }
+
+
+    // TODO expose fallback method (free impl)
 
     @Bean
     @LoadBalanced

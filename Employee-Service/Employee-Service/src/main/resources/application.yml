@@ -1,7 +1,7 @@
 server:
-  port: 8011    
- 
-eureka:         
+  port: 8011
+
+eureka:
   instance:
     leaseRenewalIntervalInSeconds: 5
     leaseExpirationDurationInSeconds: 2
@@ -12,15 +12,15 @@ eureka:
       enabled: true
     lease:
       duration: 5
- 
-spring:    
+
+spring:
   application:
-    name: employee-service   
-     
+    name: employee-service
+
 management:
   security:
-    enabled: false  
- 
+    enabled: false
+
 logging:
   level:
     com.self.sprintboot.learning.employee: DEBUG
